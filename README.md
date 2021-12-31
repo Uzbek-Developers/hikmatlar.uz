@@ -33,6 +33,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Contributing
+
+Learn about contribution [here](https://github.com/Uzbek-Developers/hikmatlar.uz/blob/main/CONTRIBUTING.md) and how to setup your development environment [here](https://github.com/Uzbek-Developers/hikmatlar.uz/blob/main/DEVELOPER.md).
 
 
 ## License
