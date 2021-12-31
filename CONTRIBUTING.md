@@ -33,3 +33,9 @@ Iltimos, bu qanday o'zgarish ekanligini ko'rib chiqing:
 * **Asosiy xususiyat** uchun, avvalo, masalani oching [masalani oching](#submit-issue) va taklifingizni belgilang siz bergan taklif muhokama qilinadi. Bu bizga sa'y-harakatlarimizni yaxshiroq muvofiqlashtirishga, ishlarni takrorlashning oldini olishga va loyihaga muvaffaqiyatli qabul qilinishi uchun o'zgartirishni amalga oshirishga yordam beradi.
 
 * **Kichik xususiyatlar** to'g'ridan-to'g'ri ishlab chiqilishi mumkin. Buning uchun [Pull Request yuboring](#submit-pr).
+
+
+## <a name="submit"></a>   Taqdim etish boʻyicha koʻrsatmalar (*Submission Guidelines*)
+
+
+### <a name="submit-issue"></a> Muammoni yuborish (*Submitting an Issue*)
