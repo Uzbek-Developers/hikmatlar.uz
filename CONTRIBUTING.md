@@ -44,3 +44,45 @@ Biz barcha muammolarni imkon qadar tezroq bartaraf etishni xoxlaymiz, lekin xato
 Xatoliklarni tuzatish uchun sizdan muammoni batafsilroq tushuntirishni so'raymiz.
 
 [Ushbu formani](https://github.com/Uzbek-Developers/hikmatlar.uz/issues/new) to'ldirib siz muammo yoki xatolikni yozishingiz mumkin.
+
+### <a name="submit-pr"></a> Pull Request yuborish *Submitting a Pull Request* (PR)
+
+Pull Request (PR) yuborishdan oldin quyidagi yo'riqnomaga amal qiling:
+
+* [Pull requests](https://github.com/Uzbek-Developers/hikmatlar.uz/pulls) bo'limidan tekshirib ko'ring. Siz yubormoqchi bo'lgan PR mavjud bo'lish mumkin.
+
+* Barcha o'zgarishlaringizni yangi git branchda qiling
+
+     ```shell
+     git checkout -b my-fix-branch main
+     ```
+
+* Sizning pull requestingizga tegishli **test holatlarni** o'z ichiga olishi kerak testlarsiz siz yuborgan PR qabul qilinmaydi.
+
+* Qilgan o'zgarishlaringizni aniq tavsiflovchi xabarlardan foydalaning bizning [xabar konventsiyalarini bajarish](#commit) qoidalarimizga ergashing.
+Ushbu konventsiyalarga rioya qilish zarur, chunki relizlar ushbu xabarlardan avtomatik ravishda yaratiladi.
+
+     ```shell
+     git commit -a
+     ```
+
+Eslatma: ixtiyoriy commit -a buyruq qatori opsiyasi tahrirlangan fayllarni avtomatik ravishda qo'shadi *add* va o'chiradi *rm* qiladi.
+
+* Push your branch to GitHub:
+
+    ```shell
+    git push origin my-fix-branch
+    ```
+
+* Githubda `hikmatlar.uz:main` ga pull request PR yuboring.
+* Agar biz o'zgarishlarni taklif qilsak
+  * Kerakli yangilanishlarni amalga oshiring
+  * Qaytadan testlarni ishlatib ko'ring barchasi muvaffaqiyatli o'tishi kerak.
+  * Filialingizni qayta asoslang *rebase* va GitHub omboringizga o'tishga majbur qiling *force push* (bu sizning Pull Requestingizni yangilaydi):
+
+    ```shell
+    git rebase main -i
+    git push -f
+    ```
+
+Bo'ldi shu! Hissangiz uchun rahmat!
