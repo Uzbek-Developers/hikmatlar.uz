@@ -1,10 +1,22 @@
 {
-  "name": "server",
+  "name": "hikmatlar",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Hikmatlar.uz platformasi",
+  "main": "./src/main.js",
   "private": true,
-  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uzbek-Developers/hikmatlar.uz.git"
+  },
+  "keywords": [
+    "hikmatlar.uz"
+  ],
+  "author": "ahmadulinjs@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Uzbek-Developers/hikmatlar.uz/issues"
+  },
+  "homepage": "https://github.com/Uzbek-Developers/hikmatlar.uz#readme",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
