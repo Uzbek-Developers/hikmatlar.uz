@@ -34,8 +34,6 @@ Iltimos, bu qanday o'zgarish ekanligini ko'rib chiqing:
 
 * **Kichik xususiyatlar** to'g'ridan-to'g'ri ishlab chiqilishi mumkin. Buning uchun [Pull Request yuboring](#submit-pr).
 
-
 ## <a name="submit"></a>   Taqdim etish boʻyicha koʻrsatmalar (*Submission Guidelines*)
-
 
 ### <a name="submit-issue"></a> Muammoni yuborish (*Submitting an Issue*)
