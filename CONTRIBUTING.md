@@ -37,3 +37,10 @@ Iltimos, bu qanday o'zgarish ekanligini ko'rib chiqing:
 ## <a name="submit"></a>   Taqdim etish boʻyicha koʻrsatmalar (*Submission Guidelines*)
 
 ### <a name="submit-issue"></a> Muammoni yuborish (*Submitting an Issue*)
+
+Muammoni yuborishda oldin mavjud bo'lgan muammolar ro'yxatidan tekshirib qarab ko'ring. Siz yubormoqchi bo'lgan muamo ro'yxatda bo'lishi mumkin.
+
+Biz barcha muammolarni imkon qadar tezroq bartaraf etishni xoxlaymiz, lekin xatoni tuzatishdan oldin uni qayta ishlab chiqarishimiz va tasdiqlashimiz kerak.
+Xatoliklarni tuzatish uchun sizdan muammoni batafsilroq tushuntirishni so'raymiz.
+
+[Ushbu formani](https://github.com/Uzbek-Developers/hikmatlar.uz/issues/new) to'ldirib siz muammo yoki xatolikni yozishingiz mumkin.
