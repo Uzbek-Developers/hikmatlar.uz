@@ -106,7 +106,7 @@ Siz yuborgan PR `main` branchga qo'shilganidan keyin PR uchun yaratilgan branchn
 * Delete the local branch:
 
     ```shell
-    git branch -D my-fix-branch
+    git branch -D my-branch
     ```
 
 * Update your master with the latest upstream version:
