@@ -114,3 +114,22 @@ Siz yuborgan PR `main` branchga qo'shilganidan keyin PR uchun yaratilgan branchn
     ```shell
     git pull --ff upstream master
     ```
+
+## <a name="commit"></a> Xabarni yuborish bo'yicha ko'rsatmalar **Commit Message Guidelines**
+
+Bizning git commit xabarlarimizni formatlash bo'yicha juda aniq qoidalarimiz bor. Ushbu qoidalar loyiha tarixini tushunish va oqishga onson bo'lishi uchun zarur. Lekin biz uchun commit xabarlar o'zgarishlar jurnalini *changelog* avtomatik generatsiya qilish uchun ham muhim.
+
+### Commit xabarlarining formati **Commit Message Format**
+
+Barcha commit xabarlar **header**, **body**, **footer**. Sarlavha **header** o'z ichiga olgan maxsus formatga ega ushbu formatlar quidagilar: **type** va **subject**.
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+Xabarning har qanday satri 100 belgidan oshmasligi kerak! Bu xabarni osonroq qilish imkonini beradi
+GitHub-da, shuningdek, turli xil git vositalarida o'qish uchun.
