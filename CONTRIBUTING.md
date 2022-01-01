@@ -71,7 +71,7 @@ Eslatma: ixtiyoriy commit -a buyruq qatori opsiyasi tahrirlangan fayllarni avtom
 * Push your branch to GitHub:
 
     ```shell
-    git push origin my-fix-branch
+    git push origin my-branch
     ```
 
 * Githubda `hikmatlar.uz:main` ga pull request PR yuboring.
@@ -86,3 +86,31 @@ Eslatma: ixtiyoriy commit -a buyruq qatori opsiyasi tahrirlangan fayllarni avtom
     ```
 
 Bo'ldi shu! Hissangiz uchun rahmat!
+
+## Pull Request asosiy branchga qo'shilgandan so'ng
+
+Siz yuborgan PR `main` branchga qo'shilganidan keyin PR uchun yaratilgan branchni Githubdan o'chirib yuborishingiz kerak.
+
+* Github dan remote branchni o'chirib yuborish uchun quyidagilarga amal qiling:
+
+    ```shell
+    git push origin --delete my-branch
+    ```
+
+* Check out the master branch:
+
+    ```shell
+    git checkout master -f
+    ```
+
+* Delete the local branch:
+
+    ```shell
+    git branch -D my-fix-branch
+    ```
+
+* Update your master with the latest upstream version:
+
+    ```shell
+    git pull --ff upstream master
+    ```
