@@ -133,3 +133,21 @@ Barcha commit xabarlar **header**, **body**, **footer**. Sarlavha **header** o'z
 
 Xabarning har qanday satri 100 belgidan oshmasligi kerak! Bu xabarni osonroq qilish imkonini beradi
 GitHub-da, shuningdek, turli xil git vositalarida o'qish uchun.
+
+### Orqaga qaytarish *Revert*
+Agar siz qilgan eng oxirgi commit xabarni ortga qaytarmoqchi bo'lsangiz `revert` qilishiniz kerak bo'ladi. Ortga qaytarilgan commit 
+
+
+### Type
+
+
+### Subject
+
+
+### Body
+
+
+### Footer
+
+
+### Examples
