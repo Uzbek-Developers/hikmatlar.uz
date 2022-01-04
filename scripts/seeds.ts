@@ -3,6 +3,7 @@ import * as faker from 'faker';
 import { Tag } from '../src/entities/Tag';
 
 (async function () {
+  /* Tags seed */
   try {
     await createConnection();
   } catch (e) {
@@ -16,4 +17,5 @@ import { Tag } from '../src/entities/Tag';
     });
     await tagRepo.save(tag);
   }
+  /* End Tags seed */
 })();
