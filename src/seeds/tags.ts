@@ -6,7 +6,7 @@ export default async function tagsSeed() {
   try {
     const tagRepo = getRepository(Tag);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       const tag = tagRepo.create({
         name: faker.unique(faker.hacker.noun, [], { maxRetries: 0, maxTime: 1 })
       });
