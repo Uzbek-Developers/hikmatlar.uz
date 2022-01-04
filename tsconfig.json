@@ -10,7 +10,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "rootDir":"./src",
+    "rootDir":"./",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": ".",
