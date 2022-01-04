@@ -1,21 +1,22 @@
-import { getRepository, createConnection } from 'typeorm';
-import * as faker from 'faker';
-import { Tag } from '../src/entities/Tag';
+import { createConnection } from 'typeorm';
+import adminUserSeed from '../src/seeds/adminUsers';
+import tagSeed from '../src/seeds/tags';
 
 (async function () {
-  /* Tags seed */
   try {
     await createConnection();
   } catch (e) {
     console.log(e);
+    process.exit(1);
   }
-  const tagRepo = getRepository(Tag);
-
-  for (let i = 0; i < 10; i++) {
-    const tag = tagRepo.create({
-      name: faker.unique(faker.hacker.noun, [], { maxRetries: 0, maxTime: 1 })
-    });
-    await tagRepo.save(tag);
+  try {
+    await adminUserSeed();
+  } catch (e) {
+    console.log(e);
   }
-  /* End Tags seed */
+  try {
+    await tagSeed();
+  } catch (e) {
+    console.log(e);
+  }
 })();
