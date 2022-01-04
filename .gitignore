@@ -53,3 +53,7 @@ dist/
 data/
 
 ormconfig.json
+
+scripts/*.d.ts
+scripts/*.js
+scripts/*.js.map
