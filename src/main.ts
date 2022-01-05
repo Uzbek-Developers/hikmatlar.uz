@@ -20,7 +20,7 @@ async function bootstrap() {
     engine: {
       handlebars: require('handlebars')
     },
-    templates: join(__dirname, '..', 'views')
+    templates: join(__dirname, '..', '..', 'views')
   });
   await app.listen(applicationConfig.port);
   console.log(
