@@ -1,9 +1,10 @@
 import { Get, Controller, Render } from '@nestjs/common';
+import { Page } from 'src/shared/decorators/page.decorator';
 
 @Controller()
 export class RootController {
   @Get()
-  @Render('index.hbs')
+  @Page('index.hbs')
   root() {
     return { message: 'Hello !' };
   }
