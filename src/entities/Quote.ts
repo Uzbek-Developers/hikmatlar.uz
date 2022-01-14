@@ -12,7 +12,7 @@ import {
 } from 'typeorm';
 import { Author } from './Author';
 
-@Entity({ name: 'tags' })
+@Entity({ name: 'quotes' })
 export class Quote {
   @PrimaryGeneratedColumn('uuid')
   id: string;

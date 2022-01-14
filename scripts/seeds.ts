@@ -2,6 +2,7 @@ import { createConnection } from 'typeorm';
 import adminUserSeed from '../src/seeds/adminUsers';
 import tagSeed from '../src/seeds/tags';
 import authorsSeed from '../src/seeds/authors';
+import quotesSeed from '../src/seeds/quotes';
 
 (async function () {
   try {
@@ -25,4 +26,13 @@ import authorsSeed from '../src/seeds/authors';
   } catch (e) {
     console.log(e);
   }
+  try {
+    await quotesSeed();
+  } catch (e) {
+    console.log(e);
+  }
 })();
+
+// (async function () {
+
+// })();
