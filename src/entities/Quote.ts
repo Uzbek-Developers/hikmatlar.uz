@@ -12,7 +12,7 @@ import {
 } from 'typeorm';
 import { Author } from './Author';
 
-@Entity({ name: 'tags' })
+@Entity({ name: 'quotes' })
 export class Quote {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -27,11 +27,23 @@ export class Quote {
   views: number;
 
   @ManyToOne(() => Author, (author) => author.quotes)
-  @JoinColumn({ name: 'author_id' })
+  @JoinColumn({
+    name: 'author_id'
+  })
   author: Author;
 
   @ManyToMany(() => Tag)
-  @JoinTable({ name: 'quote_tag' })
+  @JoinTable({
+    name: 'quote_tag',
+    joinColumn: {
+      name: 'quote_id',
+      referencedColumnName: 'id'
+    },
+    inverseJoinColumn: {
+      name: 'tag_id',
+      referencedColumnName: 'id'
+    }
+  })
   tags: Tag[];
 
   @CreateDateColumn()
