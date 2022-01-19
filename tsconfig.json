@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "target":"es5",
-    "lib": [
-      "es6"
-    ],
+    "target":"ESNEXT",
     "module":"commonjs",
     "declaration": true,
     "removeComments": true,
