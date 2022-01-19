@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
-
+import { AuthorService } from '../author/author.service';
 @Injectable()
 export class RootService {
-  getHello(): string {
-    return 'Hello World!';
+  constructor(private readonly authorService: AuthorService) {}
+  async getHomePageData(): Promise<any> {
+    const lastAuthors = await this.authorService.getLastAuthors();
+    console.log(lastAuthors);
+    return {
+      lastAuthors
+    };
   }
 }

@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { RootController } from './root.controller';
 import { RootService } from './root.service';
+import { AuhorModule } from '../author/author.module';
 
 @Module({
-  imports: [],
+  imports: [AuhorModule],
   controllers: [RootController],
   providers: [RootService]
 })
