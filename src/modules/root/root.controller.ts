@@ -1,4 +1,4 @@
-import { Get, Controller, Render } from '@nestjs/common';
+import { Get, Controller } from '@nestjs/common';
 import { Page } from 'src/shared/decorators/page.decorator';
 
 @Controller()
