@@ -1,3 +1,4 @@
+# this is just demo version of CI/CD
 stages:
   - build
   - deploy-stage
