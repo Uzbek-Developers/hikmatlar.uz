@@ -1,0 +1,39 @@
+stages:
+  - build
+  - deploy-stage
+
+variables:
+  VARIABLE_DATA: Gitlab-CI-YAML
+
+build:
+  stage: build
+  image: docker:18-git
+  services:
+    - docker:18-dind
+  script:
+    # get node app version from package.json for use in tagging docker image
+    - apk update && apk add jq
+    - export VERSION=`jq -r ".version" < ./package.json`
+    # login to docker
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    # build and tag docker image
+    - docker build -t $CI_REGISTRY_IMAGE:$VERSION -t $CI_REGISTRY_IMAGE:latest .
+    # publish finished image
+    - docker push $CI_REGISTRY_IMAGE:$VERSION
+    - docker push $CI_REGISTRY_IMAGE:latest
+
+deploy-stage:
+  stage: deploy-stage
+  image: alpine:latest
+  script:
+    - chmod og= $STAGE_ID_RSA
+    - apk update && apk add openssh-client
+    # stop existing docker container & remove images
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker stop $CI_PROJECT_NAME || true"
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker rm $CI_PROJECT_NAME || true"
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker image rm $CI_REGISTRY_IMAGE:latest || true"
+    # pull new container
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker pull $CI_REGISTRY_IMAGE:latest"
+    # run new container
+    - ssh -i $STAGE_ID_RSA -o StrictHostKeyChecking=no $STAGE_SERVER_USER@$STAGE_SERVER_IP "docker run -d --restart unless-stopped --name $CI_PROJECT_NAME -p 8882:3000 -e "variableData=Docker-Run-Command" $CI_REGISTRY_IMAGE:latest"
