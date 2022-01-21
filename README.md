@@ -1,6 +1,8 @@
 
 # Hikmatlar 
 
+[![GitHub Actions CI](https://github.com/Uzbek-Developers/hikmatlar.uz/workflows/CI/badge.svg)](https://github.com/Uzbek-Developers/hikmatlar.uz/actions?query=workflow%3ACI)
+
 ## Installation
 
 ```bash
