@@ -23,7 +23,7 @@ export class AuthorRepository extends Repository<Author> {
       return await getConnection().query(
         `select
         tg.alpha as char_group,
-        json_agg(tg.*) as tags
+        json_agg(tg.*) as authors
         from (
           select 
           * from 
