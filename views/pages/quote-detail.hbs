@@ -1,0 +1,532 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
+  <title>Hikmarlar.uz</title>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="h-16 flex items-center justify-center border-b">
+    <div class="container px-6 md:px-24 lg:px-48 xl:px-72">
+      <div class="flex flex-row justify-between
+    items-center w-full">
+
+        <a href="index.html" class="cursor-pointer">
+          <img src="./assets/svg-logo-01.svg" width="160px" alt="LOGO">
+        </a>
+
+        <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+        <button type="button" class="md:hidden p-2 rounded-md text-gray-900" onclick="show()">
+          <span class="sr-only">Open menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <a class="py-2" href="index.html" data-tooltip-target="home" data-tooltip-placement="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <div id="home" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Bosh sahifa
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </a>
+          <a class="py-2" href="RandomQuotes.html" data-tooltip-target="random" data-tooltip-placement="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-gray-900" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            <div id="random" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Tasodifiy tartibda
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </a>
+          <a class="py-2" href="Authors.html" data-tooltip-target="authors" data-tooltip-placement="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-gray-900" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <div id="authors" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Mualliflar
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </a>
+          <a class="py-2" href="Keys.html" data-tooltip-target="keys" data-tooltip-placement="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-gray-900" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+
+            <div id="keys" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Kalit So'zlar
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </a>
+          <a class="py-2" href="FavoriteQuotes.html" data-tooltip-target="favorite" data-tooltip-placement="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 hover:text-gray-900" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <div id="favorite" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Sevimli hikmatlar
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <section class="flex justify-center py-6" style="min-height: calc(100vh - 176px);">
+    <div class="container px-6 md:px-24 lg:px-48 xl:px-72">
+      <!-- QUOTE DETALES -->
+      <div class="flex flex-col justify-center gap-8 border-b">
+        <!-- QUOTE IMAGE -->
+        <div class="rounded-md overflow-hidden flex justify-center">
+          <!-- <img class="object-cover h-60 w-full"
+            src="https://image.freepik.com/free-vector/realistic-objective-background_79603-1821.jpg" /> -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="247.364" height="322" viewBox="0 0 247.364 322">
+            <g id="Symbols" transform="translate(12.002 1.002)">
+              <g id="Scene_Plants" data-name="Scene/Plants" transform="translate(-12.002 -1.002)">
+                <path id="Leaf-Bottom"
+                  d="M130.672,177.216c3.58,1.547,8.127-.7,5.947-5.176-2.336-4.789-10.024-4.447-14.359-4.122.436,0,2.07,4.418,2.585,5.072A14.735,14.735,0,0,0,130.672,177.216ZM85.866,91.5C84.946,90.8,85.791,91.438,85.866,91.5Zm47.007,63.381a4.146,4.146,0,0,0,.147-6.207c-2.1-2.117-5.725-1.846-8.421-1.488-1.22.162-7.731,1.029-6.125,2.017a5.285,5.285,0,0,1-.65-.269q-.257-.775-.533-1.542c.037-.024.069-.05.109-.075-.043.021-.074.044-.112.066a60.087,60.087,0,0,0-7.516-14.417,14.171,14.171,0,0,0,3.432.726c3.434.253,10.471-2.774,6.417-7.117-3.887-4.163-9.338.807-13.457,1.67a194.381,194.381,0,0,0-13.972-15.528,1.11,1.11,0,0,0,.649-.6c1.917.849,3.934,2.1,5.68,2.379,2.521.4,7.651.451,9.418-1.88,2.174-2.866-.427-4.964-3.193-5.347-4.011-.555-9.107,1.657-12.859,3.168a1.264,1.264,0,0,0-1.179.463l-.247.095c-4.984-4.935-10.14-9.689-15.26-14.336h.158a13.239,13.239,0,0,0,4.2,1.658c3.455.653,7.47.446,10.11-2.168s3.381-6.953.383-9.564c-6-5.226-13.756,7.813-16.61,8.49-5.2-4.669-10.668-9-16.213-13.232a9.488,9.488,0,0,0,1.88.281c5.231.225,17.114-6.8,10.4-12.74C63.656,64.21,57.766,75.078,53.472,79,48.25,75.053,43,71.14,37.886,67.057a14.245,14.245,0,0,0,8.1-.476c2.91-1.05,7.565-3.533,5.487-7.428-2.115-3.961-7.748-1.813-10.664-.367-1.591.788-4.73,3.332-7.544,4.482a98.278,98.278,0,0,1-20.982-24A86.011,86.011,0,0,1,3.968,20.764C2.661,16.639.147,9.73.291,4.265c-1.476,11,2.911,23.89,7.408,33.417a81.973,81.973,0,0,0,16.83,23.072C23.171,65.688,9.965,73.4,18.315,77.477c4.434,2.157,8.64-2.028,9.363-6.264C28.174,68.3,27,64.737,25.806,62q3.2,3.076,6.617,5.932c3.138,2.632,6.345,5.18,9.579,7.692-4.847,5.057-8.954,19-2,20.882,10.266,2.769,4.428-15.653,3.54-19.116a.551.551,0,0,0-.461.2c.04-.323.088-.67.15-1.019,6.188,4.781,12.458,9.457,18.542,14.366A26.7,26.7,0,0,0,59.9,93.7,29.894,29.894,0,0,0,56.279,99.6c-1.459,3.366-2.757,8.68,1.666,10.382,4.811,1.856,6.734-4.178,6.582-7.71a46.89,46.89,0,0,0-1.363-7.1c-.147-.741.093-4.126-.848-2.626a7.132,7.132,0,0,0-.031-1.2q1.639,1.328,3.256,2.686a1.267,1.267,0,0,0-.07.41,1.221,1.221,0,0,0,1.807,1.058q2.138,1.829,4.227,3.718c2.946,2.675,5.937,5.429,8.911,8.246-.584.557-.3,1.272-.845,1.86s-1.651.953-2.3,1.5a16.265,16.265,0,0,0-3.837,5.277c-1.51,3.17-3.332,9.748,1.629,10.961,5.114,1.253,7.344-5.1,7.464-9.012a99.375,99.375,0,0,0-1.459-9.964c5.5,5.237,10.934,10.684,15.887,16.256-1.408.087-5.252,3.184-6.019,4.013-1.869,2.025-4.78,6.436-1.207,8.5,3.177,1.832,6.812-1.253,7.978-4.127A39.424,39.424,0,0,0,98.4,126c2.053,2.365,4.018,4.75,5.855,7.149q1.838,2.393,3.465,4.92a2.309,2.309,0,0,0-.643.7c-5.078,1.138-11.192,9.474-5.028,11.941,2.935,1.172,5.9-1.721,7.186-4.03a29.82,29.82,0,0,0,.893-4.629,96.026,96.026,0,0,1,7.665,17.713,1.12,1.12,0,0,0-.819,1.084c-2.413,1.548-4.316,2.832-5.91,5.65-.99,1.75-2.73,5.722.489,6.5,4.19,1.007,6.451-5.429,6.625-8.55.021-.363-.036-1.41-.1-2.37a1.388,1.388,0,0,0,.43-.03c1.149,3.812,2.111,7.684,2.918,11.571-2.214.843-1.984,12.688-.4,14.293,3.548,3.594,5.627-1.975,5.3-4.844a19.026,19.026,0,0,0-4.064-9.034c-.211-.279-.155-.269-.184.139a.819.819,0,0,0-.218-.444,51.528,51.528,0,0,0-.082-5.206,120.726,120.726,0,0,0-2.257-13.468q-.365-1.615-.808-3.2a26.241,26.241,0,0,0,5.379,3.067C126.629,155.9,130.51,156.9,132.873,154.886ZM0,4.265A12.763,12.763,0,0,1,.711,0,33.274,33.274,0,0,0,0,4.265Z"
+                  transform="matrix(-0.999, -0.052, 0.052, -0.999, 136.999, 195.998)" fill="#acd6db"
+                  fill-rule="evenodd" />
+                <g id="Plant-Right" transform="translate(64.594 37.239)" opacity="0.7">
+                  <path id="Leaf-Me-Alone_" data-name="Leaf-Me-Alone!"
+                    d="M47.557,168.434c-9.7-.514-21.047-7.4-20.975-18,.053-7.7,1.084-15.277.726-23.01a61.964,61.964,0,0,0-3.718-18.046c-2.007-5.6-6.856-10.693-7.643-16.531a24.552,24.552,0,0,1,2.119-12.19c1.934-4.158,1.111-3.9-1.458-7.829-5.035-7.7-9.476-15.521-12.267-24.379-4.02-12.758-6-27.386-2.625-40.535C2.145,6.244,3.082.189,5.462.009c2.658-.2,1.073,3.152.815,4.261C4.636,11.351,3.188,17.539,3.493,24.939c1.176,28.549,19.4,49.192,30.023,74.434.593,1.306,1.809,4.4,2.665,6.441,1.352,3.228,2.424,9.212,4.451,11.713,3.817,4.712.8-4.271.138-5.994-.833-2.18-1.758-4.5-2.645-6.429-4.044-8.924-8.579-18.678-12.757-27.879,22.536-2.7,35.255,25.387,39.333,43.4,3.36,14.843,5.66,48.963-17.144,47.806"
+                    transform="matrix(-0.995, 0.105, -0.105, -0.995, 84.06, 244.556)" fill="#69a1ac"
+                    fill-rule="evenodd" />
+                  <path id="Leaf-Me-Alone_2" data-name="Leaf-Me-Alone!"
+                    d="M181.364,78.086c-16.222,1.287-26.637,11.992-31.485,26.965-2.613,8.068-2.913,16.357-4.365,24.65-2.184,12.475-6.884,21.929-16.069,30.817a31,31,0,0,0-6.431,8.6,36.645,36.645,0,0,0-7.426,10.612c-2.417,5.334-3.1,11.734-.311,17.052a17.477,17.477,0,0,0,4.562,5.6,109.822,109.822,0,0,0-10.806,49.326c.272,10.212.771,20.43,1.353,30.63.156,2.739,1.048,7.262,2.388,2.668,1.226-4.2-.311-10.8-.453-15.186-.692-21.382-1.284-40.823,7.518-60.8.923-2.094,1.9-4.171,2.921-6.231a2.032,2.032,0,0,0,.172-.117c.038.03.074.062.113.092.065-.117.154-.254.258-.409a5.559,5.559,0,0,0,.79-1.108c.78-1.082,1.664-2.354,1.669-3.049,0,0,0-.013,0-.019a287.9,287.9,0,0,1,18.064-25.539c-.048.06,6.915-9.42,5.839-4.177-.519,2.527-5.64,7.338-7.709,10.014a249.359,249.359,0,0,0-14.413,20.791c-.6.345-1.449,2.04-2.063,3.3-.339.64-.655,1.284-.966,1.847,15.821,5.227,28.127-5.3,36.519-17.548l.028-.044a53.227,53.227,0,0,1,8.438-9.418c5.452-4.464,11.291-5.251,17.72-7.448,17.532-5.99,24.985-28.71,27.352-45.569,2.671-19.019-10.394-48.184-33.2-46.309"
+                    transform="translate(-32.14 -22.832)" fill="#89c5cc" fill-rule="evenodd" />
+                  <path id="Leaf-Me-Alone_3" data-name="Leaf-Me-Alone!"
+                    d="M69.722,1.622c-18.9,14.843-30.21,37.525-39.663,59.014-10.556,24-18.776,48.725-22.606,74.683C4.936,152.373,2.058,169.486.658,186.678A183.228,183.228,0,0,0,.029,205.06c.01.5.277,14.181,2.77,11.353,1.418-1.609-.251-14.185-.222-16.237A263.046,263.046,0,0,1,5.692,165.71c2.761-18.814,4.839-37.625,9.384-56.117a64.15,64.15,0,0,1,2.367-8.318c1.116-2.814.038-1.669,2.5-2.5,2.393-.807,5.134-.259,7.651-1.339C37.581,93.151,44.3,79.48,49.287,70.591c5.7-10.165,9.86-21.275,13.485-32.306a239.005,239.005,0,0,0,6.68-24.556A65.652,65.652,0,0,1,71.3,5.791a18.316,18.316,0,0,0,1.181-2.458c.132-1.327-.556-2.215-.465-3.333q-1.166.786-2.3,1.622"
+                    transform="translate(47.91 10.09) rotate(-8)" fill="#89c5cc" fill-rule="evenodd" />
+                  <path id="Base" d="M38,328a51.889,51.889,0,0,0,103.779,0" transform="translate(-11.608 -95.128)"
+                    fill="#89c5cc" fill-rule="evenodd" />
+                  <path id="Leaf-Me-Alone_4" data-name="Leaf-Me-Alone!"
+                    d="M115.742,309.657H113a92.052,92.052,0,0,1,1.016-10.276c2.2-13.01,9.077-32.118,24.161-34.23a38.968,38.968,0,0,1,5.083.054,9.157,9.157,0,0,1,3.879-1.145c12.842-.947,27.184,9.413,33.378,20.2,4.994,8.693,4.153,20.107,1.068,29.343-2.066,6.183-6.574,15-14.091,15.084-9.405.107-9.859-11.517-10.041-18.313-.242-9.035-1.383-16.905-8.5-23.064-1.659-1.434-3.472-2.7-5.148-4.111-2.624-2.214-5.524-4.482-5.863-8.145-.466-5.054,2.386-5.964,6.742-5.025.743.16,8.223,3.516,7.115.864-.338-.81-1.573-1.453-3.132-1.934-4.033-.439-8.844-.948-10.227-.643-14.924,3.274-20.734,23.947-22.278,37.081C115.994,306.81,115.86,308.233,115.742,309.657Z"
+                    transform="translate(-33.297 -76.62)" fill="#69a1ac" fill-rule="evenodd" />
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <!-- QUOTE & QUOTE TITLE & QUOTE AUTHOR -->
+        <div>
+          <p class="font-semibold text-lg text-gray-900 text-center italic">
+            We do not remember days, we remember moments.
+          </p>
+          <p class="font-medium text-md text-gray-400 text-center italic mt-4">Cesare Pavese</p>
+        </div>
+        <!-- QUOTE TAGS & HASHTAGS -->
+        <div class="flex flex-row gap-2 justify-center">
+          <span
+            class="flex justify-center items-center text-gray-400 border border-primary-light italic  text-xs font-semibold px-2.5 py-1 rounded-full ">
+            <a href="#">
+              Life
+            </a>
+          </span>
+          <span
+            class="flex justify-center items-center text-gray-400 border border-primary-light italic  text-xs font-semibold px-2.5 py-1 rounded-full ">
+            <a href="#">
+              remember
+            </a>
+          </span>
+          <span
+            class="flex justify-center items-center text-gray-400 border border-primary-light italic  text-xs font-semibold px-2.5 py-1 rounded-full ">
+            <a href="#">
+              days
+            </a>
+          </span>
+          <span
+            class="flex justify-center items-center text-gray-400 border border-primary-light italic  text-xs font-semibold px-2.5 py-1 rounded-full ">
+            <a href="#">
+              moments
+            </a>
+          </span>
+        </div>
+        <!-- QUOTE BUTTONS -->
+        <div class="flex flex-row flex-nowrap justify-between py-4 lg:p-4">
+          <div class="flex md:gap-2">
+
+            <button data-tooltip-target="view" data-tooltip-placement="top" type="button"
+              class="inline-flex items-center justify-center p-0 h-12 text-gray-400 whitespace-nowrap">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+
+              <span class="ml-2.5 font-semibold">
+                7, 413
+              </span>
+            </button>
+            <div id="view" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Korilganlar soni
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+          </div>
+
+          <div class="flex md:gap-2">
+
+            <button data-tooltip-target="download" data-tooltip-placement="top" type="button"
+              class="inline-flex items-center justify-center p-0 w-12 h-12 text-gray-400 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+            </button>
+            <div id="download" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Ulashish
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+            <button data-tooltip-target="share" data-tooltip-placement="top" type="button"
+              class="inline-flex items-center justify-center p-0 w-12 h-12 text-gray-400 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </button>
+            <div id="share" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Yuklab olish
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+            <button data-tooltip-target="like" data-tooltip-placement="top" type="button"
+              class="inline-flex items-center justify-center p-0 w-12 h-12 text-gray-400 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <div id="like" role="tooltip"
+              class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Sevimlilar safiga qoshish
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- TITLE -->
+      <p class="text-md text-gray font-semibold py-6 lg:px-4">O'xshashlar</p>
+
+      <!-- RECOMENDED QUOTES -->
+      <div class="flex flex-col gap-4" id="second" role="tabpanel" aria-labelledby="second-tab">
+
+        <div
+          class="group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none">
+          <a href="QuoteDetales.html">
+            <p class="text-sm break-normal font-semibold text-gray-900
+              line-clamp-3 mb-2">
+              Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
+              odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham
+              odat tufayli erishiladi.
+              Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
+              odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham
+              odat tufayli erishiladi.ss
+            </p>
+            <div class="flex flex-row items-center justify-between flex-nowrap ">
+              <div>
+                <p class="text-gray-400 font-medium text-sm line-clamp-1">Abu
+                  Ali Ibn Sino</p>
+              </div>
+              <div class="flex flex-nowrap items-center space-x-4 hidden lg:block">
+                <button data-tooltip-target="tooltip-default" type="button"
+                  class="rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </button>
+                <div id="tooltip-default" role="tooltip"
+                  class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                  Sevimlilay safiga qo'shish
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none">
+          <a href="QuoteDetales.html">
+            <p class="text-sm break-normal font-semibold text-gray-900
+              line-clamp-3 mb-2">
+              Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
+              odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham
+              odat tufayli erishiladi.
+              Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
+              odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham
+              odat tufayli erishiladi.ss
+            </p>
+            <div class="flex flex-row items-center justify-between flex-nowrap ">
+              <div>
+                <p class="text-gray-400 font-medium text-sm line-clamp-1">Abu
+                  Ali Ibn Sino</p>
+              </div>
+              <div class="flex flex-nowrap items-center space-x-4 hidden lg:block">
+                <button data-tooltip-target="tooltip-default" type="button"
+                  class="rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 " fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </button>
+                <div id="tooltip-default" role="tooltip"
+                  class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                  Sevimlilay safiga qo'shish
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      </main>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="flex justify-center border-t py-8   bg-primary-light bg-opacity-5">
+    <div class="container px-6 md:px-24 lg:px-48 xl:px-72">
+
+      <main class="flex flex-col gap-4 justify-center items-center w-full">
+
+        <div class="w-full lg:w-auto">
+          <img src="./assets/svg-logo-01.svg" width="120px" alt="LOGO">
+        </div>
+
+        <div class="w-full lg:w-auto flex flex-wrap sm:flex-nowrap gap-2 lg:gap-4 items-center ">
+          <div class="inline-flex gap-4 w-full ">
+            <span class="w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+              <a href="index.html" class="text-sm font-semibold ">Bosh sahifa</a>
+            </span>
+            <span class="w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+              <a href="RandomQuotes.html" class="text-sm font-semibold ">Tasodifiy tartibda</a>
+            </span>
+          </div>
+          <div class="inline-flex gap-4 w-full ">
+            <span class="w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+              <a href="Authors.html" class="text-sm font-semibold ">Mualliflar</a>
+            </span>
+            <span class="w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+              <a href="Keys.html" class="text-sm font-semibold ">Kalit So'zlar</a>
+            </span>
+          </div>
+          <div class="inline-flex gap-4 w-full ">
+            <span class="w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+              <a href="FavoriteQuotes.html" class="text-sm font-semibold ">Sevimli hikmatlarim</a>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="inline-flex gap-2 lg:gap-4 w-full lg:w-auto">
+          <span class="w-full sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+            <a href="References.html" class="text-sm font-semibold ">Foydalanilgan manbalar</a>
+          </span>
+          <span class="w-full sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap">
+            <a href="AboutUs.html" class="text-sm font-semibold ">Loyiha haqida</a>
+          </span>
+        </div>
+
+      </main>
+
+    </div>
+
+
+    <!-- <div>
+      <span class="text-sm font-semibold text-gray-900">
+        © Hikmatlar.uz. Oz-oz o'rganib dono bulur.
+      </span>
+    </div> -->
+  </footer>
+
+  <!-- NAVIGATIN SLIDER -->
+  <div class="fixed inset-0 max-h-full overflow-hidden bg-red bg-opacity-50" style="display: none" id="slider_bg"
+    aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
+    <div class="absolute inset-0 overflow-hidden ">
+
+      <!-- CLOSER -->
+      <div class="absolute inset-0 bg-black bg-opacity-75 transition-opacity overflow-hidden" onclick="closeSlider()"
+        aria-hidden="true"></div>
+
+      <div class="fixed inset-y-0 left-0 max-w-full flex -translate-x-full" id="slider">
+        <div class="relative w-screen max-w-xs sm:max-w-sm">
+
+          <!-- PANEL -->
+          <div class="h-full flex flex-col py-8 px-4 bg-white shadow-xl ">
+            <div class=" flex flex-row flex-nowrap justify-between px-4 items-center p-4">
+              <!-- <h2 class="text-xl font-semibold text-gray-900" id="slide-over-title">
+                Hikmatlar.uz
+              </h2> -->
+              <img src="./assets/svg-logo-01.svg" width="160px" alt="LOGO">
+
+              <!-- SLIDER CLOSER BTN -->
+              <button type="button" onclick="closeSlider()"
+                class="rounded-md text-gray hover:text-gray-light focus:outline-none focus:ring-2 focus:ring-white">
+                <span class="sr-only">Close panel</span>
+                <!-- Heroicon name: outline/x -->
+                <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="flex flex-col justify-between h-[100%]">
+              <ul class=" flex flex-col py-4 gap">
+                <li>
+                  <a href="index.html"
+                    class="flex flex-row items-center h-12 transform  text-gray-500 hover:text-gray-800">
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-900" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                    </span>
+                    <span class="text-md font-medium text-gray-900">Bosh sahifa</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="RandomQuotes.html"
+                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    </span>
+                    <span class="text-md font-normal text-gray-600">Tasodifiy tartibda</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="Authors.html"
+                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </span>
+                    <span class="text-md font-normal text-gray-600">Mualliflar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="Keys.html"
+                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                      </svg>
+                    </span>
+                    <span class="text-md font-normal text-gray-600">Kalit So'zlar</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="References.html"
+                    class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                    <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                      </svg>
+                    </span>
+                    <span class="text-md font-normal text-gray-600">Foydalanilgan manbalar</span>
+                  </a>
+                </li>
+
+              </ul>
+              <li class="list-none">
+                <a href="AboutUs.html"
+                  class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+                  <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                      class=" inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </span>
+                  <span class="text-md font-normal text-gray-600">Loyiha haqida</span>
+                </a>
+              </li>
+            </div>
+            <!-- /End replace -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let slider = document.getElementById('slider')
+    let sliderBg = document.getElementById('slider_bg')
+    function show() {
+      console.log("hello")
+
+      slider.style.transform = "translateX(0)"
+      sliderBg.style.display = "block"
+      sliderBg.style.opacity = "100%"
+    }
+
+    function closeSlider() {
+      slider.style.transform = "translateX(-700px)"
+      sliderBg.style.display = "none"
+    }
+  </script>
+  <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+</body>
+
+</html>

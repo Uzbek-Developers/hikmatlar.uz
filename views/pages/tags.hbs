@@ -1,0 +1,1617 @@
+<html>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link href='../dist/output.css' rel='stylesheet' />
+    <link
+      rel='stylesheet'
+      href='https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css'
+    />
+    <title>Hikmarlar.uz</title>
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header class='h-16 flex items-center justify-center'>
+      <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+        <div class='flex flex-row justify-between items-center w-full'>
+
+          <a href='index.html' class='cursor-pointer'>
+            <img src='./assets/svg-logo-01.svg' width='160px' alt='LOGO' />
+          </a>
+
+          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+          <button
+            type='button'
+            class='md:hidden p-2 rounded-md text-gray-900'
+            onclick='show()'
+          >
+            <span class='sr-only'>Open menu</span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              class='h-6 w-6 text-gray-900'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+              aria-hidden='true'
+            >
+              <path
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                d='M4 6h16M4 12h16m-7 6h7'
+              ></path>
+            </svg>
+          </button>
+
+          <div class='hidden md:flex space-x-8 items-center'>
+            <a
+              class='py-2'
+              href='index.html'
+              data-tooltip-target='home'
+              data-tooltip-placement='bottom'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-6 w-6 text-gray-900'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+                ></path>
+              </svg>
+              <div
+                id='home'
+                role='tooltip'
+                class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+              >
+                Bosh sahifa
+                <div class='tooltip-arrow' data-popper-arrow></div>
+              </div>
+            </a>
+            <a
+              class='py-2'
+              href='RandomQuotes.html'
+              data-tooltip-target='random'
+              data-tooltip-placement='bottom'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-6 w-6 text-gray-600 hover:text-gray-900'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+                ></path>
+              </svg>
+              <div
+                id='random'
+                role='tooltip'
+                class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+              >
+                Tasodifiy tartibda
+                <div class='tooltip-arrow' data-popper-arrow></div>
+              </div>
+            </a>
+            <a
+              class='py-2'
+              href='Authors.html'
+              data-tooltip-target='authors'
+              data-tooltip-placement='bottom'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-6 w-6 text-gray-600 hover:text-gray-900'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                ></path>
+              </svg>
+              <div
+                id='authors'
+                role='tooltip'
+                class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+              >
+                Mualliflar
+                <div class='tooltip-arrow' data-popper-arrow></div>
+              </div>
+            </a>
+            <a
+              class='py-2'
+              href='Keys.html'
+              data-tooltip-target='keys'
+              data-tooltip-placement='bottom'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-6 w-6 text-gray-600 hover:text-gray-900'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'
+                ></path>
+              </svg>
+
+              <div
+                id='keys'
+                role='tooltip'
+                class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+              >
+                Kalit So'zlar
+                <div class='tooltip-arrow' data-popper-arrow></div>
+              </div>
+            </a>
+            <a
+              class='py-2'
+              href='FavoriteQuotes.html'
+              data-tooltip-target='favorite'
+              data-tooltip-placement='bottom'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-6 w-6 text-gray-600 hover:text-gray-900'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                ></path>
+              </svg>
+              <div
+                id='favorite'
+                role='tooltip'
+                class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+              >
+                Sevimli hikmatlar
+                <div class='tooltip-arrow' data-popper-arrow></div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SEARCH  -->
+    <div
+      class='flex justify-center py-4 bg-primary bg-opacity-5 border-b border-t'
+    >
+      <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+
+        <div class='w-full relative flex items-center'>
+          <input
+            class='border-gray-200 outline-none px-5 pr-16 h-12 font-semibold rounded-full focus:outline-none w-full text-gray-900 text-md'
+            type='search'
+            name='search'
+            placeholder='Search...'
+          />
+          <button type='submit' class='absolute right-2 mr-4'>
+            <svg
+              class='text-gray-light h-4 w-4 fill-current'
+              xmlns='http://www.w3.org/2000/svg'
+              xmlns:xlink='http://www.w3.org/1999/xlink'
+              version='1.1'
+              id='Capa_1'
+              x='0px'
+              y='0px'
+              viewBox='0 0 56.966 56.966'
+              style='enable-background:new 0 0 56.966 56.966;'
+              xml:space='preserve'
+              width='512px'
+              height='512px'
+            >
+              <path
+                d='M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z'
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <section
+      class='flex justify-center py-6'
+      style='min-height: calc(100vh - 176px);'
+    >
+      <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+        <!-- TITLE -->
+        <p class='text-md text-gray font-semibold py-6'>Kalit sozlar</p>
+
+        <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+
+          <div
+            class='p-4 px-6 border-l flex flex-col gap-8 last:border-r w-full'
+          >
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>A</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Ace</a>
+              <a
+                href='TagsDetales.html'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>B</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>C</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>D</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>E</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>F</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+          </div>
+
+          <div
+            class='p-4 px-6 border-l flex flex-col gap-8 last:border-r w-full'
+          >
+
+            <div class='flex flex-col gap-2'>
+              <h4
+                class='text-3xl font-semibold text-gray-900 mb-2 capitalize'
+              >G</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Ace</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>H</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>I</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>J</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Ace</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>K</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>L</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+          </div>
+
+          <div
+            class='p-4 px-6 border-l flex flex-col gap-8 last:border-r w-full'
+          >
+
+            <div class='flex flex-col gap-2'>
+              <h4
+                class='text-3xl font-semibold text-gray-900 mb-2 capitalize'
+              >M</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>N</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>O</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>P</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>Q</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>R</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+          </div>
+
+          <div
+            class='p-4 px-6 border-l flex flex-col gap-8 last:border-r w-full'
+          >
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>S</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>T</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>U</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backer</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Background</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>V</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4
+                class='text-3xl font-semibold text-gray-900 mb-2 capitalize'
+              >W</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Absorbing</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accessible</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Ace</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>X</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Baby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backbone</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Backup</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bacon</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Bad</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>Y</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabal</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabby</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >caber</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabin</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cable</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cabob</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacao</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >cacce</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+            <div class='flex flex-col gap-2'>
+              <h4 class='text-3xl font-semibold text-gray-900 mb-2'>Z</h4>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abound</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Abundant</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Acclaim</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accommodating</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accomplished</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Accurate</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-600 hover:text-gray-900 hover:underline capitalize'
+              >Ace</a>
+              <a
+                href='#'
+                class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'
+              >ko'proq ko'rish...</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class='flex justify-center border-t py-8 bg-primary-light bg-opacity-5'
+    >
+      <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+
+        <main class='flex flex-col gap-4 justify-center items-center w-full'>
+
+          <div class='w-full lg:w-auto'>
+            <img src='./assets/svg-logo-01.svg' width='120px' alt='LOGO' />
+          </div>
+
+          <div
+            class='w-full lg:w-auto flex flex-wrap sm:flex-nowrap gap-2 lg:gap-4 items-center'
+          >
+            <div class='inline-flex gap-4 w-full'>
+              <span
+                class='w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+              >
+                <a href='index.html' class='text-sm font-semibold'>Bosh sahifa</a>
+              </span>
+              <span
+                class='w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+              >
+                <a
+                  href='RandomQuotes.html'
+                  class='text-sm font-semibold'
+                >Tasodifiy tartibda</a>
+              </span>
+            </div>
+            <div class='inline-flex gap-4 w-full'>
+              <span
+                class='w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+              >
+                <a
+                  href='Authors.html'
+                  class='text-sm font-semibold'
+                >Mualliflar</a>
+              </span>
+              <span
+                class='w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+              >
+                <a href='Keys.html' class='text-sm font-semibold'>Kalit So'zlar</a>
+              </span>
+            </div>
+            <div class='inline-flex gap-4 w-full'>
+              <span
+                class='w-full text-left sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+              >
+                <a
+                  href='FavoriteQuotes.html'
+                  class='text-sm font-semibold'
+                >Sevimli hikmatlarim</a>
+              </span>
+
+            </div>
+          </div>
+
+          <div class='inline-flex gap-2 lg:gap-4 w-full lg:w-auto'>
+            <span
+              class='w-full sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+            >
+              <a
+                href='References.html'
+                class='text-sm font-semibold'
+              >Foydalanilgan manbalar</a>
+            </span>
+            <span
+              class='w-full sm:w-auto hover:text-gray-900 text-gray-600 whitespace-nowrap'
+            >
+              <a href='AboutUs.html' class='text-sm font-semibold'>Loyiha haqida</a>
+            </span>
+          </div>
+
+        </main>
+
+      </div>
+
+      <!-- <div>
+      <span class="text-sm font-semibold text-gray-900">
+        © Hikmatlar.uz. Oz-oz o'rganib dono bulur.
+      </span>
+    </div> -->
+    </footer>
+
+    <!-- NAVIGATIN SLIDER -->
+    <div
+      class='fixed inset-0 max-h-full overflow-hidden bg-red bg-opacity-50'
+      style='display: none'
+      id='slider_bg'
+      aria-labelledby='slide-over-title'
+      role='dialog'
+      aria-modal='true'
+    >
+      <div class='absolute inset-0 overflow-hidden'>
+
+        <!-- CLOSER -->
+        <div
+          class='absolute inset-0 bg-black bg-opacity-75 transition-opacity overflow-hidden'
+          onclick='closeSlider()'
+          aria-hidden='true'
+        ></div>
+
+        <div
+          class='fixed inset-y-0 left-0 max-w-full flex -translate-x-full'
+          id='slider'
+        >
+          <div class='relative w-screen max-w-xs sm:max-w-sm'>
+
+            <!-- PANEL -->
+            <div class='h-full flex flex-col py-8 px-4 bg-white shadow-xl'>
+              <div
+                class='flex flex-row flex-nowrap justify-between px-4 items-center p-4'
+              >
+                <!-- <h2 class="text-xl font-semibold text-gray-900" id="slide-over-title">
+                Hikmatlar.uz
+              </h2> -->
+                <img src='./assets/svg-logo-01.svg' width='160px' alt='LOGO' />
+
+                <!-- SLIDER CLOSER BTN -->
+                <button
+                  type='button'
+                  onclick='closeSlider()'
+                  class='rounded-md text-gray hover:text-gray-light focus:outline-none focus:ring-2 focus:ring-white'
+                >
+                  <span class='sr-only'>Close panel</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg
+                    class='h-6 w-6 text-gray-500'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    aria-hidden='true'
+                  >
+                    <path
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      stroke-width='2'
+                      d='M6 18L18 6M6 6l12 12'
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class='flex flex-col justify-between h-[100%]'>
+                <ul class='flex flex-col py-4 gap'>
+                  <li>
+                    <a
+                      href='index.html'
+                      class='flex flex-row items-center h-12 transform text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-900'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-medium text-gray-900'>Bosh
+                        sahifa</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='RandomQuotes.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Tasodifiy
+                        tartibda</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='Authors.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span
+                        class='text-md font-normal text-gray-600'
+                      >Mualliflar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='Keys.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Kalit
+                        So'zlar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='References.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span
+                        class='text-md font-normal text-gray-600'
+                      >Foydalanilgan manbalar</span>
+                    </a>
+                  </li>
+
+                </ul>
+                <li class='list-none'>
+                  <a
+                    href='AboutUs.html'
+                    class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                  >
+                    <span
+                      class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                        ></path>
+                      </svg>
+                    </span>
+                    <span class='text-md font-normal text-gray-600'>Loyiha
+                      haqida</span>
+                  </a>
+                </li>
+              </div>
+              <!-- /End replace -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let slider = document.getElementById('slider') let sliderBg =
+      document.getElementById('slider_bg') function show() {
+      console.log("hello") slider.style.transform = "translateX(0)"
+      sliderBg.style.display = "block" sliderBg.style.opacity = "100%" }
+      function closeSlider() { slider.style.transform = "translateX(-700px)"
+      sliderBg.style.display = "none" }
+    </script>
+    <script
+      src='https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js'
+    ></script>
+
+  </body>
+
+</html>
