@@ -7,6 +7,8 @@ import { QuoteModule } from './modules/quote/quote.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
+    RootModule,
+    QuoteModule,
     RouterModule.register([
       {
         path: '/',
