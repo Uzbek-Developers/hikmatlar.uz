@@ -287,397 +287,66 @@
           aria-labelledby='second-tab'
         >
 
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+          {{#each quotes}}
 
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
+            <div
+              class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
+            >
+              <a href='QuoteDetales.html'>
+                <p
+                  class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
                 >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
+                  {{this.content}}
+                </p>
+                <div
+                  class='flex flex-row items-center justify-between flex-nowrap'
+                >
+                
+                {{#if this.author}}
+                  <div>
+                    <p
+                      class='text-gray-400 font-medium text-sm line-clamp-1'
+                    >{{this.author.full_name}}</p>
+                  </div>
+                {{/if}}
+                  
                   <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
+                    class='flex flex-nowrap items-center space-x-4 hidden lg:block'
                   >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
+                    <button
+                      data-tooltip-target='tooltip-default'
+                      type='button'
+                      class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
+                    >
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='h-6 w-6'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                      >
+                        <path
+                          stroke-linecap='round'
+                          stroke-linejoin='round'
+                          stroke-width='2'
+                          d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                        ></path>
+                      </svg>
+                    </button>
+                    <div
+                      id='tooltip-default'
+                      role='tooltip'
+                      class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
+                    >
+                      Sevimlilay safiga qo'shish
+                      <div class='tooltip-arrow' data-popper-arrow></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </div>
+              </a>
+            </div>
 
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div
-            class='group w-full border-b border-gray-200 cursor-pointer lg:hover:bg-gray-100 py-6 lg:p-4 last:border-none'
-          >
-            <a href='QuoteDetales.html'>
-              <p
-                class='text-sm break-normal font-semibold text-gray-900 line-clamp-3 mb-2'
-              >
-                Yaxshi va yomon xulqning hammasi sharoit, tarbiya, odatlanish
-                natijasida vujudga keladi. Yaxshi xulqqa ham odat tufayli
-                erishiladi. Yaxshi va yomon xulqning hammasi sharoit, tarbiya,
-                odatlanish natijasida vujudga keladi. Yaxshi xulqqa ham odat
-                tufayli erishiladi.ss
-              </p>
-              <div
-                class='flex flex-row items-center justify-between flex-nowrap'
-              >
-                <div>
-                  <p class='text-gray-400 font-medium text-sm line-clamp-1'>Abu
-                    Ali Ibn Sino</p>
-                </div>
-                <div
-                  class='flex flex-nowrap items-center space-x-4 hidden lg:block'
-                >
-                  <button
-                    data-tooltip-target='tooltip-default'
-                    type='button'
-                    class='rounded-full p-1 text-center text-gray-400 hover:text-gray-900 lg:invisible group-hover:visible'
-                  >
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      class='h-6 w-6'
-                      fill='none'
-                      viewBox='0 0 24 24'
-                      stroke='currentColor'
-                    >
-                      <path
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='2'
-                        d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='tooltip-default'
-                    role='tooltip'
-                    class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700'
-                  >
-                    Sevimlilay safiga qo'shish
-                    <div class='tooltip-arrow' data-popper-arrow></div>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+          {{/each}}
 
         </div>
 
