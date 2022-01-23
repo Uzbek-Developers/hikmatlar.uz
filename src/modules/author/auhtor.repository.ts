@@ -18,7 +18,7 @@ export class AuthorRepository extends Repository<Author> {
 
   async getAuthorsGroupByFirstChar(
     limit: number
-  ): Promise<AuthorsGroupByFirstChar> {
+  ): Promise<AuthorsGroupByFirstChar[]> {
     try {
       return await getConnection().query(
         `select
@@ -32,7 +32,7 @@ export class AuthorRepository extends Repository<Author> {
               *,
               row_number() over (partition by t.alpha order by t.alpha) as rownum
             from (
-              select *, SUBSTR(a."full_name", 1, 1) as alpha from authors a 
+              select *, SUBSTR(lower(a."full_name"), 1, 1) as alpha from authors a 
             ) t
           ) tmp
           where tmp.rownum <= $1
