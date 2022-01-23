@@ -8,4 +8,8 @@ export class QuoteService {
   findQuotes(): Observable<Quote[]> {
     return from(this.quoteRepository.find());
   }
+
+  findQuotesByRandom(): Promise<Quote[]> {
+    return this.quoteRepository.findByRandomOrder();
+  }
 }
