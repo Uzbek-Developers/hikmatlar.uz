@@ -8,4 +8,4 @@ import { QuoteRepository } from './quote.repository';
   exports: [QuoteService],
   providers: [QuoteService]
 })
-export class RootModule {}
+export class QuoteModule {}
