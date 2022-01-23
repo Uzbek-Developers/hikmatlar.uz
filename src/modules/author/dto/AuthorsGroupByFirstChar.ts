@@ -1,5 +1,5 @@
 import { Author } from '../../../entities/Author';
 export type AuthorsGroupByFirstChar = {
-  char: string;
+  char_group: string;
   authors: Author[];
 };
