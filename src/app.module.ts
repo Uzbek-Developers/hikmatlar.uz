@@ -22,9 +22,12 @@ import { TagsModule } from './modules/tags/tags.module';
       {
         path: '/quotes',
         module: QuoteModule
+      },
+      {
+        path: '/tags',
+        module: TagsModule
       }
-    ]),
-    TagsModule
+    ])
   ]
 })
 export class AppModule {}
