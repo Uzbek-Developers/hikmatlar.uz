@@ -20,15 +20,19 @@ describe('AuthorService', () => {
     repository = module.get<AuthorRepository>(AuthorRepository);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
+  describe('Author service', () => {
+    it('should be defined', () => {
+      expect(service).toBeDefined();
+    });
   });
 
-  it('should be get LastAuthors', async () => {
-    const getLastAuthors = await service.getLastAuthors();
-    expect(getLastAuthors).toEqual(expect.toBeArray());
-    getLastAuthors.forEach((author) => {
-      expect(author).toContainAnyKeys(['id', 'full_name', 'description']);
+  describe('Get LastAuthors', () => {
+    it('should be get LastAuthors', async () => {
+      const getLastAuthors = await service.getLastAuthors();
+      expect(getLastAuthors).toEqual(expect.toBeArray());
+      getLastAuthors.forEach((author) => {
+        expect(author).toContainAnyKeys(['id', 'full_name', 'description']);
+      });
     });
   });
 
