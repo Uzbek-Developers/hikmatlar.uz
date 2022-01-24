@@ -6,12 +6,20 @@ import {
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 import { app as applicationConfig } from './config';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter()
   );
+  app.useGlobalPipes(
+    new ValidationPipe({
+      transform: true,
+      forbidNonWhitelisted: true
+    })
+  );
+
   app.useStaticAssets({
     root: join(__dirname, '..', 'public'),
     prefix: '/public/'
