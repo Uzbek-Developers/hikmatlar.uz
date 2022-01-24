@@ -23,7 +23,6 @@ export default async function quoteSeed() {
         author: authors[quoteAuthorIndex],
         tags
       });
-      console.log(quote);
       await quoteRepo.save(quote);
     }
   } catch (e) {

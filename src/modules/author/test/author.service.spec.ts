@@ -63,7 +63,6 @@ describe('AuthorService', () => {
       const data = await repository.insert(authors);
       const authorIds: string[] = data.raw.map((author) => author.id);
       const authorsGroupByFirstChar = await service.GroupByFirstChar();
-      console.log(authorsGroupByFirstChar);
       expect(authorsGroupByFirstChar).toEqual(expect.toBeArray());
 
       authorsGroupByFirstChar.forEach((group) => {

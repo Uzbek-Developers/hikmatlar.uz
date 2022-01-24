@@ -10,7 +10,6 @@ export class AuthorController {
   @Page('authors')
   async authorsList() {
     const authorsGroupByFirstChar = await this.authorService.GroupByFirstChar();
-    console.log(authorsGroupByFirstChar);
     return { authorsGroupByFirstChar };
   }
 }

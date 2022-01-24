@@ -5,7 +5,6 @@ export class RootService {
   constructor(private readonly authorService: AuthorService) {}
   async getHomePageData(): Promise<any> {
     const lastAuthors = await this.authorService.getLastAuthors();
-    console.log(lastAuthors);
     return {
       lastAuthors
     };
