@@ -1,6 +1,14 @@
-import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
+import {
+  BadRequestException,
+  Body,
+  Controller,
+  Param,
+  Post,
+  Put
+} from '@nestjs/common';
 import { AuthorService } from './author.service';
-import { CreateAuthorDTO } from './dto/CreateTeacher';
+import { CreateAuthorDTO } from './dto/CreateAuthor';
+import { UpdateAuthorDTO } from './dto/UpdateAuthor';
 
 @Controller()
 export class AuthorsController {
@@ -15,5 +23,10 @@ export class AuthorsController {
     }
 
     return this.authorService.createAuthor(body);
+  }
+
+  @Put(':id')
+  async update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
+    return this.authorService.updateAuthor(id, body);
   }
 }

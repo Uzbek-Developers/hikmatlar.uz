@@ -3,7 +3,8 @@ import { Injectable } from '@nestjs/common';
 import { AuthorRepository } from './auhtor.repository';
 import { Author } from '../../entities/Author';
 import { AuthorsGroupByFirstChar } from './dto/AuthorsGroupByFirstChar';
-import { CreateAuthorDTO } from './dto/CreateTeacher';
+import { CreateAuthorDTO } from './dto/CreateAuthor';
+import { UpdateAuthorDTO } from './dto/UpdateAuthor';
 
 @Injectable()
 export class AuthorService {
@@ -26,5 +27,12 @@ export class AuthorService {
 
   getAuthorByName(fullName: string): Promise<Author> {
     return this.authorRepository.findOne({ full_name: fullName });
+  }
+
+  updateAuthor(id: string, body: UpdateAuthorDTO) {
+    return this.authorRepository.update(id, {
+      full_name: body.fullName,
+      description: body.description
+    });
   }
 }
