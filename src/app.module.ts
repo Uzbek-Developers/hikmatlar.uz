@@ -2,7 +2,7 @@ import { RouterModule } from '@nestjs/core';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RootModule } from './modules/root/root.module';
-import { AuhorModule } from './modules/author/author.module';
+import { AuthorModule } from './modules/author/author.module';
 import { QuoteModule } from './modules/quote/quote.module';
 @Module({
   imports: [
@@ -16,7 +16,7 @@ import { QuoteModule } from './modules/quote/quote.module';
       },
       {
         path: '/authors',
-        module: AuhorModule
+        module: AuthorModule
       },
       {
         path: '/quotes',
