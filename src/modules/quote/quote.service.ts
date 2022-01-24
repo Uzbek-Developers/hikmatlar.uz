@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Quote } from 'dist/src/entities/Quote';
+import { Quote } from '../../entities/Quote';
 import { from, Observable } from 'rxjs';
 import { QuoteRepository } from './quote.repository';
 @Injectable()
