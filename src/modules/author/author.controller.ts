@@ -4,6 +4,7 @@ import {
   Controller,
   Delete,
   Get,
+  NotFoundException,
   Param,
   Post,
   Put
@@ -32,13 +33,36 @@ export class AuthorsController {
     return this.authorService.getAuthors();
   }
 
+  @Get(':id')
+  async getAuthorById(@Param('id') id: string) {
+    const author = await this.authorService.getAuthorById(id);
+
+    if (author === undefined) {
+      throw new NotFoundException('This author not found!');
+    }
+
+    return author;
+  }
+
   @Put(':id')
-  update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
+  async update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
+    const author = await this.authorService.getAuthorById(id);
+
+    if (author === undefined) {
+      throw new NotFoundException('This author not found!');
+    }
+
     return this.authorService.updateAuthor(id, body);
   }
 
   @Delete(':id')
-  delete(@Param('id') id: string) {
+  async delete(@Param('id') id: string) {
+    const author = await this.authorService.getAuthorById(id);
+
+    if (author === undefined) {
+      throw new NotFoundException('This author not found!');
+    }
+
     return this.authorService.deleteAuthor(id);
   }
 }

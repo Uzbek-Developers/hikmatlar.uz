@@ -44,4 +44,8 @@ export class AuthorService {
   getAuthors(): Promise<Author[]> {
     return this.authorRepository.find();
   }
+
+  getAuthorById(id: string): Promise<Author> {
+    return this.authorRepository.findOne(id);
+  }
 }
