@@ -40,4 +40,8 @@ export class AuthorService {
   deleteAuthor(id: string): Promise<DeleteResult> {
     return this.authorRepository.delete(id);
   }
+
+  getAuthors(): Promise<Author[]> {
+    return this.authorRepository.find();
+  }
 }

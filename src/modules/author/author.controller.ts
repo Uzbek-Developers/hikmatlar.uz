@@ -3,6 +3,7 @@ import {
   Body,
   Controller,
   Delete,
+  Get,
   Param,
   Post,
   Put
@@ -26,13 +27,18 @@ export class AuthorsController {
     return this.authorService.createAuthor(body);
   }
 
+  @Get()
+  getAuthor() {
+    return this.authorService.getAuthors();
+  }
+
   @Put(':id')
-  async update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
+  update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
     return this.authorService.updateAuthor(id, body);
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string) {
+  delete(@Param('id') id: string) {
     return this.authorService.deleteAuthor(id);
   }
 }
