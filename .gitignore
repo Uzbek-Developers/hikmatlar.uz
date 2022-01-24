@@ -3,6 +3,9 @@ package-lock.json
 
 # Environment variables
 .env
+.env.test
+.env.prod
+.env.dev
 
 # Logs
 logs
@@ -57,3 +60,4 @@ ormconfig.json
 scripts/*.d.ts
 scripts/*.js
 scripts/*.js.map
+
