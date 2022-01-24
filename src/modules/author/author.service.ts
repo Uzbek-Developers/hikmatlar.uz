@@ -5,6 +5,7 @@ import { Author } from '../../entities/Author';
 import { AuthorsGroupByFirstChar } from './dto/AuthorsGroupByFirstChar';
 import { CreateAuthorDTO } from './dto/CreateAuthor';
 import { UpdateAuthorDTO } from './dto/UpdateAuthor';
+import { DeleteResult, UpdateResult } from 'typeorm';
 
 @Injectable()
 export class AuthorService {
@@ -29,10 +30,14 @@ export class AuthorService {
     return this.authorRepository.findOne({ full_name: fullName });
   }
 
-  updateAuthor(id: string, body: UpdateAuthorDTO) {
+  updateAuthor(id: string, body: UpdateAuthorDTO): Promise<UpdateResult> {
     return this.authorRepository.update(id, {
       full_name: body.fullName,
       description: body.description
     });
+  }
+
+  deleteAuthor(id: string): Promise<DeleteResult> {
+    return this.authorRepository.delete(id);
   }
 }

@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Param,
   Post,
   Put
@@ -28,5 +29,10 @@ export class AuthorsController {
   @Put(':id')
   async update(@Param('id') id: string, @Body() body: UpdateAuthorDTO) {
     return this.authorService.updateAuthor(id, body);
+  }
+
+  @Delete(':id')
+  async delete(@Param('id') id: string) {
+    return this.authorService.deleteAuthor(id);
   }
 }
