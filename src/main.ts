@@ -7,6 +7,7 @@ import {
 import { AppModule } from './app.module';
 import { app as applicationConfig } from './config';
 import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -30,6 +31,15 @@ async function bootstrap() {
     },
     templates: join(__dirname, '..', 'views')
   });
+
+  const config = new DocumentBuilder()
+    .setTitle('Hikmatlar uz loyihasi')
+    .setDescription('The hikjmatlar API description')
+    .setVersion('1.0')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('/dashboard/swagger', app, document);
+
   await app.listen(applicationConfig.port);
   console.log(
     `Application running on http://localhost:${applicationConfig.port}`
