@@ -15,7 +15,7 @@ export class TagRepository extends Repository<Tag> {
       return await getConnection().query(
         `select
         tg.alpha as char_group,
-        json_agg(tg.*) as authors
+        json_agg(tg.*) as tags
         from (
           select 
           * from 
@@ -24,7 +24,7 @@ export class TagRepository extends Repository<Tag> {
               *,
               row_number() over (partition by t.alpha order by t.alpha) as rownum
             from (
-              select *, SUBSTR(lower(t."full_name"), 1, 1) as alpha from tags a 
+              select *, SUBSTR(lower(t."name"), 1, 1) as alpha from tags t
             ) t
           ) tmp
           where tmp.rownum <= $1
