@@ -10,6 +10,7 @@ import { TagsModule } from './modules/tags/tags.module';
     TypeOrmModule.forRoot(),
     RootModule,
     QuoteModule,
+    TagsModule,
     RouterModule.register([
       {
         path: '/',
