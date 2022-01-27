@@ -36,6 +36,7 @@ async function bootstrap() {
     .setTitle('Hikmatlar uz loyihasi')
     .setDescription('The hikjmatlar API description')
     .setVersion('1.0')
+    .setBasePath('/dashboard')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('/dashboard/swagger', app, document);
