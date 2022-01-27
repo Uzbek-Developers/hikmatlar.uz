@@ -29,6 +29,10 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
       {
         path: '/tags',
         module: TagsModule
+      },
+      {
+        path: '/dashboard',
+        module: TagsModule
       }
     ])
   ]
