@@ -4,7 +4,7 @@ import { AuthorService } from './author.service';
 import { Page } from '../../shared/decorators/page.decorator';
 
 @Controller()
-export class AuthorController {
+export class AuthorPageController {
   constructor(private readonly authorService: AuthorService) {}
 
   @ApiExcludeEndpoint()
