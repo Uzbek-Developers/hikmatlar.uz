@@ -1,4 +1,3 @@
-import { RouterModule } from '@nestjs/core';
 import { Module } from '@nestjs/common';
 import { AuthorDashboardController } from '../api/authors/author-api.controller';
 import { TagDashboardController } from '../api/tags/tag-api.controller';
