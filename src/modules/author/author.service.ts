@@ -4,6 +4,7 @@ import { AuthorRepository } from './auhtor.repository';
 import { Author } from '../../entities/Author';
 import { AuthorsGroupByFirstChar } from './dto/AuthorsGroupByFirstChar';
 import { CreateAuthorDto } from './dto/CreateAuthor';
+import { DeleteResult } from 'typeorm';
 import { UpdateAuthorDto } from './dto/UpdateAuthor';
 import { UpdateResult } from 'typeorm';
 @Injectable()
@@ -35,5 +36,9 @@ export class AuthorService {
     }
 
     return this.authorRepository.update(id, updateFileds);
+  }
+
+  delete(id: string): Promise<DeleteResult> {
+    return this.authorRepository.delete(id);
   }
 }

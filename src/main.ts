@@ -34,7 +34,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Hikmatlar uz loyihasi')
-    .setDescription('The hikjmatlar API description')
+    .setDescription('The hikmatlar API description')
     .setVersion('1.0')
     .setBasePath('/dashboard')
     .build();
