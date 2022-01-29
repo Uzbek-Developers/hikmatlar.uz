@@ -26,7 +26,7 @@ export class AuthorDashboardController {
 
   @Put(':id')
   async updateAuthor(
-    @Param('id') id: number,
+    @Param() id,
     @Body() author: UpdateAuthorDto
   ): Promise<UpdateResult> {
     return this.authorService.update(id, author);

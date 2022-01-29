@@ -21,7 +21,7 @@ export class AuthorService {
     return this.authorRepository.save(authorModel);
   }
 
-  update(id: number, author: UpdateAuthorDto): Promise<UpdateResult> {
+  update(id, author: UpdateAuthorDto): Promise<UpdateResult> {
     return this.authorRepository.update(id, {
       full_name: author.fullName,
       description: author.description
