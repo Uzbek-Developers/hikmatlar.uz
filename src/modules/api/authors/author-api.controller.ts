@@ -3,6 +3,7 @@ import {
   Controller,
   Body,
   Delete,
+  Put,
   Param,
   NotFoundException
 } from '@nestjs/common';
@@ -19,6 +20,8 @@ import { Author } from '../../../entities/Author';
 import { AuthorDto } from '../../author/dto/AuthorDto';
 import { ValidationErrorExeption } from '../../../shared/exception/ValidationErrorExeption';
 import { DeleteResult } from 'typeorm';
+import { UpdateResult } from 'typeorm';
+import { UpdateAuthorDto } from '../../author/dto/UpdateAuthor';
 
 @Controller('/authors')
 @ApiTags('authors')
@@ -32,7 +35,39 @@ export class AuthorDashboardController {
     return this.authorService.create(author);
   }
 
-  @Delete(':id')
+  @Put(':id')
+  @ApiOkResponse({ description: 'OK' })
+  @ApiBadRequestResponse({
+    description: 'Bad Request',
+    schema: {
+      type: 'String',
+      enum: [
+        {
+          statusCode: 400,
+          message: 'full_name must be a string',
+          error: 'Bad Request'
+        },
+        {
+          statusCode: 400,
+          message: 'description must be a string',
+          error: 'Bad Request'
+        }
+      ]
+    }
+  })
+  async updateAuthor(
+    @Param() id: string,
+    @Body() body: UpdateAuthorDto
+  ): Promise<UpdateResult> {
+    const author = await this.authorService.getAuthor(id);
+
+    if (author === undefined) {
+      throw new NotFoundException('Author not found!');
+    }
+
+    return this.authorService.update(id, body);
+  }
+
   @ApiOkResponse({ description: 'OK' })
   @ApiNotFoundResponse({
     description: 'Not Found',
@@ -45,13 +80,8 @@ export class AuthorDashboardController {
       }
     }
   })
+  @Delete(':id')
   async deleteAuthor(@Param('id') id: string): Promise<DeleteResult> {
-    const author = await this.authorService.getAuthor(id);
-
-    if (author === undefined) {
-      throw new NotFoundException('Author not found!');
-    }
-
     return this.authorService.delete(id);
   }
 }
