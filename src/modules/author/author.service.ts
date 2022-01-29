@@ -21,10 +21,19 @@ export class AuthorService {
     return this.authorRepository.save(authorModel);
   }
 
-  update(id, author: UpdateAuthorDto): Promise<UpdateResult> {
-    return this.authorRepository.update(id, {
-      full_name: author.fullName,
-      description: author.description
-    });
+  getAuthor(id: string): Promise<Author> {
+    return this.authorRepository.findOne(id);
+  }
+
+  update(id: string, author: UpdateAuthorDto): Promise<UpdateResult> {
+    const updateFileds = {};
+
+    for (const key in author) {
+      if (author[key] != undefined) {
+        updateFileds[key] = author[key];
+      }
+    }
+
+    return this.authorRepository.update(id, updateFileds);
   }
 }
