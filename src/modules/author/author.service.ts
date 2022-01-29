@@ -4,6 +4,8 @@ import { AuthorRepository } from './auhtor.repository';
 import { Author } from '../../entities/Author';
 import { AuthorsGroupByFirstChar } from './dto/AuthorsGroupByFirstChar';
 import { CreateAuthorDto } from './dto/CreateAuthor';
+import { UpdateAuthorDto } from './dto/UpdateAuthor';
+import { UpdateResult } from 'typeorm';
 @Injectable()
 export class AuthorService {
   constructor(private readonly authorRepository: AuthorRepository) {}
@@ -17,5 +19,21 @@ export class AuthorService {
   create(author: CreateAuthorDto): Promise<Author> {
     const authorModel = this.authorRepository.create(author);
     return this.authorRepository.save(authorModel);
+  }
+
+  getAuthor(id: string): Promise<Author> {
+    return this.authorRepository.findOne(id);
+  }
+
+  update(id: string, author: UpdateAuthorDto): Promise<UpdateResult> {
+    const updateFileds = {};
+
+    for (const key in author) {
+      if (author[key] != undefined) {
+        updateFileds[key] = author[key];
+      }
+    }
+
+    return this.authorRepository.update(id, updateFileds);
   }
 }
