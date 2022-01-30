@@ -23,7 +23,7 @@ export class Quote {
   @Column()
   cover_img: string;
 
-  @Column()
+  @Column({ default: 0 })
   views: number;
 
   @ManyToOne(() => Author, (author) => author.quotes)
