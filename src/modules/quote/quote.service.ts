@@ -12,4 +12,8 @@ export class QuoteService {
   findQuotesByRandom(): Promise<Quote[]> {
     return this.quoteRepository.findByRandomOrder();
   }
+
+  findById(id: string): Promise<Quote> {
+    return this.quoteRepository.getQuoteById(id);
+  }
 }
