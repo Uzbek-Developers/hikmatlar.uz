@@ -4,7 +4,7 @@ import { TagRepository } from './tags.repository';
 import { CreateTagDto } from './dto/CreateTag';
 import { Tag } from '../../entities/Tag';
 import { UpdateTagDto } from './dto/UpdateTag';
-import { UpdateResult } from 'typeorm';
+import { DeleteResult, UpdateResult } from 'typeorm';
 @Injectable()
 export class TagsService {
   constructor(private readonly tagsRepository: TagRepository) {}
@@ -24,5 +24,9 @@ export class TagsService {
 
   update(id: string, tag: UpdateTagDto): Promise<UpdateResult> {
     return this.tagsRepository.update(id, tag);
+  }
+
+  delete(id: string): Promise<DeleteResult> {
+    return this.tagsRepository.delete(id);
   }
 }
