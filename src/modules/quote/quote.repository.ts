@@ -27,4 +27,19 @@ export class QuoteRepository extends Repository<Quote> {
       this.logger.error(err);
     }
   }
+
+  async getAll(page: number, limit: number): Promise<Quote[]> {
+    try {
+      return await getConnection().query(
+        `
+        select * 
+        from quotes  
+        offset($1 - 1) * $2 fetch next $2 rows only
+      `,
+        [page, limit]
+      );
+    } catch (err) {
+      this.logger.error(err);
+    }
+  }
 }
