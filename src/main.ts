@@ -27,7 +27,7 @@ async function bootstrap() {
   });
   app.setViewEngine({
     engine: {
-      handlebars: require('handlebars')
+      ejs: require('ejs')
     },
     templates: join(__dirname, '..', 'views')
   });

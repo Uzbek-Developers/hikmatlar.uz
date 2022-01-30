@@ -55,8 +55,19 @@ export class AuthorDashboardController {
       ]
     }
   })
+  @ApiNotFoundResponse({
+    description: 'Not Found',
+    schema: {
+      type: 'String',
+      example: {
+        statusCode: 404,
+        message: 'Author not found!',
+        error: 'Bad Request'
+      }
+    }
+  })
   async updateAuthor(
-    @Param() id: string,
+    @Param('id') id: string,
     @Body() body: UpdateAuthorDto
   ): Promise<UpdateResult> {
     const author = await this.authorService.getAuthor(id);

@@ -32,7 +32,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
       },
       {
         path: '/dashboard',
-        module: TagsModule
+        module: DashboardModule
       }
     ])
   ]

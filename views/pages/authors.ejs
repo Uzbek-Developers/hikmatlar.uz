@@ -1,0 +1,72 @@
+<html>
+
+<%- include('../partials/head.ejs') %>
+
+  <body>
+
+    <!-- Header -->
+    <%- include('../components/header.ejs') %>
+
+      <!-- SEARCH  -->
+
+      <%- include('../components/search.ejs') %>
+
+        <!-- CONTENT -->
+        <section class='flex justify-center py-6' style='min-height: calc(100vh - 176px);'>
+          <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+
+            <!-- TITLE -->
+            <p class='text-md text-gray font-semibold py-6'>Mualliflar</p>
+
+            <div class='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+
+              <div class='p-4 px-6 border-l flex flex-col gap-8 last:border-r w-full'>
+
+                <% authorsGroupByFirstChar.forEach((group)=> { %>
+                  <div class='flex flex-col gap-2'>
+                    <h4 class='text-3xl font-semibold text-gray-900 mb-2'>
+                      <%= group.char_group %>
+                    </h4>
+
+                    <% group.authors.forEach((author)=> { %>
+                      <a href='/authors/<%=author.id%>' />
+                      <%=author.full_name%>
+                      </a>
+                      <% }); %>
+                        <a href='#'
+                          class='text-sm font-medium text-gray-900 hover:text-gray-900 underline capitalize'>ko'proq
+                          ko'rish...</a>
+                  </div>
+                  <% }); %>
+
+
+              </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <%- include('../components/footer.ejs') %>
+
+          <!-- NAVIGATIN SLIDER -->
+
+          <%- include('../components/navigation.ejs') %>
+
+            <script>
+              let slider = document.getElementById('slider')
+              let sliderBg = document.getElementById('slider_bg')
+              function show() {
+                slider.style.transform = "translateX(0)"
+                sliderBg.style.display = "block"
+                sliderBg.style.opacity = "100%"
+              }
+              function closeSlider() {
+                slider.style.transform = "translateX(-700px)"
+                sliderBg.style.display = "none"
+              }
+            </script>
+            <script src='https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js'></script>
+
+  </body>
+
+</html>

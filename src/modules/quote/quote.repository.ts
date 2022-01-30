@@ -27,6 +27,13 @@ export class QuoteRepository extends Repository<Quote> {
       this.logger.error(err);
     }
   }
+  async getQuoteById(id: string) {
+    try {
+      return this.findOne({ id }, { relations: ['author', 'tags'] });
+    } catch (err) {
+      this.logger.error(err);
+    }
+  }
 
   async getAll(page: number, limit: number): Promise<Quote[]> {
     try {
