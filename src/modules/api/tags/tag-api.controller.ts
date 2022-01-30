@@ -4,7 +4,8 @@ import {
   Body,
   Put,
   Param,
-  NotFoundException
+  NotFoundException,
+  Delete
 } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
@@ -19,7 +20,7 @@ import { CreateTagDto } from '../../tags/dto/CreateTag';
 import { TagDto } from '../../tags/dto/TagDto';
 import { ValidationErrorExeption } from '../../../shared/exception/ValidationErrorExeption';
 import { Tag } from '../../../entities/Tag';
-import { UpdateResult } from 'typeorm';
+import { DeleteResult, UpdateResult } from 'typeorm';
 import { UpdateTagDto } from '../../tags/dto/UpdateTag';
 
 @Controller('/tags')
@@ -69,5 +70,28 @@ export class TagDashboardController {
     }
 
     return this.tagService.update(id, tag);
+  }
+
+  @Delete(':id')
+  @ApiOkResponse({ description: 'OK' })
+  @ApiNotFoundResponse({
+    description: 'Not Found',
+    schema: {
+      type: ' String',
+      example: {
+        statusCode: 404,
+        message: ['Tag not found'],
+        error: 'Not Found'
+      }
+    }
+  })
+  async deleteTag(@Param('id') id: string): Promise<DeleteResult> {
+    const tag = await this.tagService.getById(id);
+
+    if (tag === undefined) {
+      throw new NotFoundException('Tag not found');
+    }
+
+    return this.tagService.delete(id);
   }
 }
