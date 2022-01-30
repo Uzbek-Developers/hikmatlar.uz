@@ -2,6 +2,7 @@ import {
   Post,
   Controller,
   Body,
+  Delete,
   Put,
   Param,
   NotFoundException
@@ -18,6 +19,7 @@ import {
 import { Author } from '../../../entities/Author';
 import { AuthorDto } from '../../author/dto/AuthorDto';
 import { ValidationErrorExeption } from '../../../shared/exception/ValidationErrorExeption';
+import { DeleteResult } from 'typeorm';
 import { UpdateResult } from 'typeorm';
 import { UpdateAuthorDto } from '../../author/dto/UpdateAuthor';
 
@@ -35,17 +37,6 @@ export class AuthorDashboardController {
 
   @Put(':id')
   @ApiOkResponse({ description: 'OK' })
-  @ApiNotFoundResponse({
-    description: 'Not Found',
-    schema: {
-      type: 'String',
-      example: {
-        statusCode: 404,
-        message: 'Author not found!',
-        error: 'Not Found'
-      }
-    }
-  })
   @ApiBadRequestResponse({
     description: 'Bad Request',
     schema: {
@@ -75,5 +66,22 @@ export class AuthorDashboardController {
     }
 
     return this.authorService.update(id, body);
+  }
+
+  @ApiOkResponse({ description: 'OK' })
+  @ApiNotFoundResponse({
+    description: 'Not Found',
+    schema: {
+      type: 'String',
+      example: {
+        statusCode: 404,
+        message: 'Author not found!',
+        error: 'Not Found'
+      }
+    }
+  })
+  @Delete(':id')
+  async deleteAuthor(@Param('id') id: string): Promise<DeleteResult> {
+    return this.authorService.delete(id);
   }
 }
