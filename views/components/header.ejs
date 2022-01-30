@@ -1,0 +1,217 @@
+<header class='h-16 flex items-center justify-center'>
+  <div class='container px-6 md:px-24 lg:px-48 xl:px-72'>
+    <div class='flex flex-row justify-between items-center w-full'>
+
+      <a href='Dashboard.html' class='cursor-pointer'>
+        <img
+          src='/public/assets/svg-logo-01.svg'
+          width='160px'
+          alt='LOGO'
+        />
+      </a>
+
+      <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+      <button
+        type='button'
+        class='md:hidden p-2 rounded-md text-gray-900'
+        onclick='show()'
+      >
+        <span class='sr-only'>Open menu</span>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          class='h-6 w-6 text-gray-900'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke='currentColor'
+          aria-hidden='true'
+        >
+          <path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            d='M4 6h16M4 12h16m-7 6h7'
+          ></path>
+        </svg>
+      </button>
+
+      <div class='hidden md:flex space-x-8 items-center'>
+        <a
+          class='py-2'
+          href='/'
+          data-tooltip-target='home'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+            ></path>
+          </svg>
+          <div
+            id='home'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Bosh sahifa
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+        <a
+          class='py-2'
+          href='/quotes/random'
+          data-tooltip-target='random'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-600 hover:text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+            ></path>
+          </svg>
+          <div
+            id='random'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Tasodifiy tartibda
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+        <a
+          class='py-2'
+          href='/authors'
+          data-tooltip-target='authors'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-600 hover:text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+            ></path>
+          </svg>
+          <div
+            id='authors'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Mualliflar
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+        <a
+          class='py-2'
+          href='Categories.html'
+          data-tooltip-target='categories'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-600 hover:text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z'
+            ></path>
+          </svg>
+          <div
+            id='categories'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Toifalar
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+        <a
+          class='py-2'
+          href='Tags.html'
+          data-tooltip-target='keys'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-600 hover:text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'
+            ></path>
+          </svg>
+
+          <div
+            id='keys'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Kalit So'zlar
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+        <a
+          class='py-2'
+          href='FavoriteQuotes.html'
+          data-tooltip-target='favorite'
+          data-tooltip-placement='bottom'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 text-gray-600 hover:text-gray-900'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+            ></path>
+          </svg>
+          <div
+            id='favorite'
+            role='tooltip'
+            class='inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-800 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700'
+          >
+            Sevimli hikmatlar
+            <div class='tooltip-arrow' data-popper-arrow></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</header>
