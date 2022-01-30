@@ -1,0 +1,262 @@
+<div
+      class='fixed inset-0 max-h-full overflow-hidden bg-red bg-opacity-50'
+      style='display: none'
+      id='slider_bg'
+      aria-labelledby='slide-over-title'
+      role='dialog'
+      aria-modal='true'
+    >
+      <div class='absolute inset-0 overflow-hidden'>
+
+        <!-- CLOSER -->
+        <div
+          class='absolute inset-0 bg-black bg-opacity-75 transition-opacity overflow-hidden'
+          onclick='closeSlider()'
+          aria-hidden='true'
+        ></div>
+
+        <div
+          class='fixed inset-y-0 left-0 max-w-full flex -translate-x-full'
+          id='slider'
+        >
+          <div class='relative w-screen max-w-xs sm:max-w-sm'>
+
+            <!-- PANEL -->
+            <div class='h-full flex flex-col py-8 px-4 bg-white shadow-xl'>
+              <div
+                class='flex flex-row flex-nowrap justify-between px-4 items-center p-4'
+              >
+                <!-- <h2 class="text-xl font-semibold text-gray-900" id="slide-over-title">
+                Hikmatlar.uz
+              </h2> -->
+                <img src='./assets/svg-logo-01.svg' width='160px' alt='LOGO' />
+
+                <!-- SLIDER CLOSER BTN -->
+                <button
+                  type='button'
+                  onclick='closeSlider()'
+                  class='rounded-md text-gray hover:text-gray-light focus:outline-none focus:ring-2 focus:ring-white'
+                >
+                  <span class='sr-only'>Close panel</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg
+                    class='h-6 w-6 text-gray-500'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                    aria-hidden='true'
+                  >
+                    <path
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      stroke-width='2'
+                      d='M6 18L18 6M6 6l12 12'
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <div class='flex flex-col justify-between h-[100%]'>
+                <ul class='flex flex-col py-4 gap'>
+                  <li>
+                    <a
+                      href='index.html'
+                      class='flex flex-row items-center h-12 transform text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-900'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-medium text-gray-900'>Bosh
+                        sahifa</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='RandomQuotes.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Tasodifiy
+                        tartibda</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='Authors.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-600'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span
+                        class='text-md font-normal text-gray-600'
+                      >Mualliflar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='Keys.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Kalit
+                        So'zlar</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='Keys.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Sevimli
+                        hikmatlar</span>
+                    </a>
+                  </li>
+
+                </ul>
+                <ul>
+                  <li class='list-none'>
+                    <a
+                      href='References.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span
+                        class='text-md font-normal text-gray-600'
+                      >Foydalanilgan manbalar</span>
+                    </a>
+                  </li>
+                  <li class='list-none'>
+                    <a
+                      href='AboutUs.html'
+                      class='flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800'
+                    >
+                      <span
+                        class='inline-flex items-center justify-center h-12 w-12 text-lg text-gray-light'
+                      >
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='inline-flex items-center justify-center h-5 w-5 text-lg text-gray-600'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          stroke='currentColor'
+                        >
+                          <path
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                            stroke-width='2'
+                            d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                          ></path>
+                        </svg>
+                      </span>
+                      <span class='text-md font-normal text-gray-600'>Loyiha
+                        haqida</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <!-- /End replace -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
