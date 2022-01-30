@@ -62,7 +62,7 @@ export class TagDashboardController {
     @Param('id') id: string,
     @Body() tag: UpdateTagDto
   ): Promise<UpdateResult> {
-    const isExistsTag = await this.tagService.getTag(id);
+    const isExistsTag = await this.tagService.getById(id);
 
     if (isExistsTag === undefined) {
       throw new NotFoundException('Tag not found!');

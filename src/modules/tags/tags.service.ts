@@ -18,7 +18,7 @@ export class TagsService {
     return this.tagsRepository.save(authorModel);
   }
 
-  getTag(id: string): Promise<Tag> {
+  getById(id: string): Promise<Tag> {
     return this.tagsRepository.findOne(id);
   }
 
