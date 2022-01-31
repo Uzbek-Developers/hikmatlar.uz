@@ -20,6 +20,7 @@ export class QuoteRepository extends Repository<Quote> {
           q.updated_at
         from quotes q
         left outer join authors a on q.author_id = a.id
+        where q."deleted"=false
         order by random() limit $1;`,
         [10]
       );
@@ -29,7 +30,10 @@ export class QuoteRepository extends Repository<Quote> {
   }
   async getQuoteById(id: string) {
     try {
-      return this.findOne({ id }, { relations: ['author', 'tags'] });
+      return this.findOne(
+        { id, deleted: false },
+        { relations: ['author', 'tags'] }
+      );
     } catch (err) {
       this.logger.error(err);
     }
