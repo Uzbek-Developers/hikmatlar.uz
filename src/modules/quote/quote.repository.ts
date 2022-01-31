@@ -38,4 +38,18 @@ export class QuoteRepository extends Repository<Quote> {
       this.logger.error(err);
     }
   }
+
+  async paginate(page: number, limit: number): Promise<Quote[]> {
+    try {
+      const quotes = await this.find({
+        where: { deleted: false },
+        take: limit,
+        skip: page
+      });
+
+      return quotes;
+    } catch (err) {
+      this.logger.error(err);
+    }
+  }
 }
