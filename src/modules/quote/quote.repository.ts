@@ -35,16 +35,15 @@ export class QuoteRepository extends Repository<Quote> {
     }
   }
 
-  async getAll(page: number, limit: number): Promise<Quote[]> {
+  async paginate(page: number, limit: number): Promise<Quote[]> {
     try {
-      return await getConnection().query(
-        `
-        select * 
-        from quotes  
-        offset($1 - 1) * $2 fetch next $2 rows only
-      `,
-        [page, limit]
-      );
+      const quotes = await this.find({
+        where: { deleted: false },
+        take: limit,
+        skip: page
+      });
+
+      return quotes;
     } catch (err) {
       this.logger.error(err);
     }
