@@ -3,7 +3,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 export class tags1640919355207 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `CREATE TABLE "quotes" (
+      `CREATE TABLE IF NOT EXISTS  "quotes" (
         "id" uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
         "author_id" uuid,
         "content" text,
