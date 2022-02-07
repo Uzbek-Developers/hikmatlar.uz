@@ -3,7 +3,7 @@ import { MigrationInterface, QueryRunner } from 'typeorm';
 export class quoteTag1640919576453 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `CREATE TABLE "quote_tag" (
+      `CREATE TABLE IF NOT EXISTS  "quote_tag" (
         "tag_id" uuid,
         "quote_id" uuid
       );`

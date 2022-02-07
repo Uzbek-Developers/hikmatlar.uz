@@ -11,6 +11,7 @@ import {
   JoinTable
 } from 'typeorm';
 import { Author } from './Author';
+import { Category } from './Category';
 
 @Entity({ name: 'quotes' })
 export class Quote {
@@ -31,6 +32,12 @@ export class Quote {
     name: 'author_id'
   })
   author: Author;
+
+  @ManyToOne(() => Category, (category) => category.quotes)
+  @JoinColumn({
+    name: 'category_id'
+  })
+  category: Category;
 
   @ManyToMany(() => Tag)
   @JoinTable({
