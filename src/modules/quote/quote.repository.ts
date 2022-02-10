@@ -52,4 +52,33 @@ export class QuoteRepository extends Repository<Quote> {
       this.logger.error(err);
     }
   }
+
+  async findByIdWithRelatedColmns(id: string): Promise<Quote> {
+    try {
+      return await getConnection().query(
+        `
+        select
+          q.id,
+          q.author_id,
+          q."content",
+          q.cover_img,
+          (
+            select row_to_json(a.*) from authors a 
+            where a.id = q.author_id limit 1
+          ) as author,
+          q."views",
+          json_agg(t.*) as tags,
+          q.created_at
+        from quotes q 
+          join quote_tag qt on qt.quote_id = q.id
+          join tags t on t.id = qt.tag_id
+        where q.id = $1
+        group by q.id;
+      `,
+        [id]
+      );
+    } catch (err) {
+      this.logger.error(err);
+    }
+  }
 }
