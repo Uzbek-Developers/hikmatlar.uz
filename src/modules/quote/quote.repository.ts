@@ -55,7 +55,7 @@ export class QuoteRepository extends Repository<Quote> {
 
   async findByIdWithRelatedColmns(id: string): Promise<Quote> {
     try {
-      return await getConnection().query(
+      const quote = await getConnection().query(
         `
         select
           q.id,
@@ -77,6 +77,7 @@ export class QuoteRepository extends Repository<Quote> {
       `,
         [id]
       );
+      return quote[0];
     } catch (err) {
       this.logger.error(err);
     }
