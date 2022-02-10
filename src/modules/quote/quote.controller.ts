@@ -17,8 +17,9 @@ export class QuoteController {
 
   @ApiExcludeEndpoint()
   @Get('/:id')
+  @Page('quote-detail')
   async quoteDetail(@Param('id') id: string) {
     const quote = await this.quoteService.findByIdWitRelations(id);
-    console.log(quote);
+    return { quote };
   }
 }
