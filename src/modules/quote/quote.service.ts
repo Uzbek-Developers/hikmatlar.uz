@@ -16,4 +16,8 @@ export class QuoteService {
   findById(id: string): Promise<Quote> {
     return this.quoteRepository.getQuoteById(id);
   }
+
+  findByIdWitRelations(id: string): Promise<Quote> {
+    return this.quoteRepository.findByIdWithRelatedColmns(id);
+  }
 }

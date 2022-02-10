@@ -1,4 +1,4 @@
-import { Get, Controller } from '@nestjs/common';
+import { Get, Controller, Param } from '@nestjs/common';
 import { ApiExcludeEndpoint } from '@nestjs/swagger';
 import { Page } from '../../shared/decorators/page.decorator';
 import { QuoteService } from './quote.service';
@@ -13,5 +13,12 @@ export class QuoteController {
   async getRandomQuotes() {
     const quotes = await this.quoteService.findQuotesByRandom();
     return { quotes };
+  }
+
+  @ApiExcludeEndpoint()
+  @Get('/:id')
+  async quoteDetail(@Param('id') id: string) {
+    const quote = await this.quoteService.findByIdWitRelations(id);
+    console.log(quote);
   }
 }
