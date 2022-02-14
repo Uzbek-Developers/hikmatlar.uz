@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres:14.2-alpine
+    environment:
+      POSTGRES_USER: "hikmatlar"
+      POSTGRES_PASSWORD: "hikmatlar"
+      POSTGRES_DB: "hikmatlar"
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+      - "./healthchecks:/healthchecks"
+    healthcheck:
+      test: /healthchecks/postgres.sh
+      interval: "5s"
+    networks:
+      - backend
+  app:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - ./:/app
+    ports:
+      - "8080:8080"
+    environment:
+      APP_PORT: "8080"
+      POSTGRES_HOST: db
+      POSTGRES_USER: "hikmatlar"
+      POSTGRES_PASSWORD: "hikmatlar"
+      POSTGRES_DB: "hikmatlar"
+    networks:
+      - backend
+volumes:
+  db-data:
+
+networks:
+  backend:
