@@ -6,6 +6,7 @@ import { AuthorModule } from './modules/author/author.module';
 import { QuoteModule } from './modules/quote/quote.module';
 import { TagsModule } from './modules/tags/tags.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { CategoryModule } from './modules/category/category.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
@@ -33,6 +34,10 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
       {
         path: '/dashboard',
         module: DashboardModule
+      },
+      {
+        path: '/categories',
+        module: CategoryModule
       }
     ])
   ]
