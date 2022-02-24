@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { UpdateResult } from 'typeorm';
 import { Category } from '../../entities/Category';
 import { CategoryRepository } from './category.repository';
 import { CreateCategoryDTO } from './dto/CreateCategory';
+import { UpdateCategoryDTO } from './dto/UpdateCategory';
 
 @Injectable()
 export class CategoryService {
@@ -14,5 +16,13 @@ export class CategoryService {
 
   findByName(name: string): Promise<Category> {
     return this.categoryRepository.findOne({ name });
+  }
+
+  update(id: string, category: UpdateCategoryDTO): Promise<UpdateResult> {
+    return this.categoryRepository.update(id, category);
+  }
+
+  findOne(id: string): Promise<Category> {
+    return this.categoryRepository.findOne(id);
   }
 }
