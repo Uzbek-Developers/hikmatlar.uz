@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   HttpException,
   NotFoundException,
   Param,
@@ -80,5 +81,28 @@ export class CategoryDashboardController {
     }
 
     return this.categoryService.update(id, body);
+  }
+
+  @ApiOkResponse({ description: 'OK' })
+  @ApiNotFoundResponse({
+    description: 'Not Found',
+    schema: {
+      type: 'String',
+      example: {
+        statusCode: 404,
+        message: 'Category not found!',
+        error: 'Bad Request'
+      }
+    }
+  })
+  @Delete(':id')
+  async deleteCategory(@Param('id') id: string) {
+    const category = await this.categoryService.findOne(id);
+
+    if (category === undefined) {
+      throw new NotFoundException('Category not found!');
+    }
+
+    return this.categoryService.delete(id);
   }
 }
