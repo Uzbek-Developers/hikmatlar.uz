@@ -27,15 +27,15 @@ export class AuthorService {
   }
 
   update(id: string, author: UpdateAuthorDto): Promise<UpdateResult> {
-    const updateFileds = {};
+    const updateFields = {};
 
     for (const key in author) {
       if (author[key] != undefined) {
-        updateFileds[key] = author[key];
+        updateFields[key] = author[key];
       }
     }
 
-    return this.authorRepository.update(id, updateFileds);
+    return this.authorRepository.update(id, updateFields);
   }
 
   delete(id: string): Promise<DeleteResult> {
